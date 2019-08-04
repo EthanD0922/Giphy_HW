@@ -22,9 +22,14 @@
             Animals
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <button class="dropdown-item gifButton">Cats</button>
+            <button class="dropdown-item gifButton">Dogs</button>
+            <button class="dropdown-item gifButton">Birds</button>
+            <button class="dropdown-item gifButton">Hamsters</button>
+            <button class="dropdown-item gifButton">Ocelots</button>
+            <button class="dropdown-item gifButton">Wolves</button>
+            <button class="dropdown-item gifButton">Fox</button>
+            <button class="dropdown-item gifButton">Doplhins</button>
         </div>
     </div>
     <div class="dropdown">
@@ -32,41 +37,72 @@
             Reactions
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <button class="dropdown-item gifButton">Wow</button>
+            <button class="dropdown-item gifButton">Love</button>
+            <button class="dropdown-item gifButton">Gross</button>
+            <button class="dropdown-item gifButton">Facepalm</button>
+            <button class="dropdown-item gifButton">Happy</button>
+            <button class="dropdown-item gifButton">Sad</button>
+            <button class="dropdown-item gifButton">What?</button>
         </div>
     </div>
+    <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sports
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <button class="dropdown-item gifButton">Baseball</button>
+                <button class="dropdown-item gifButton">Football</button>
+                <button class="dropdown-item gifButton">Hockey</button>
+                <button class="dropdown-item gifButton">Soccer</button>
+                <button class="dropdown-item gifButton">Basketball</button>
+                <button class="dropdown-item gifButton">Paintball</button>
+                <button class="dropdown-item gifButton">Golf</button>
+            </div>
+        </div>
     <div class="dropdown">
         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Favorites
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+        
         </div>
     </div>
+    <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle newButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                New
+            </button>
+            <div class="dropdown-menu" id="newTopics" aria-labelledby="dropdownMenuButton">
+                
+            </div>
+        </div>
                 
     </div>            
 </div>
 
 <div class="container mt-5  ">
     <div class="row">
-        <div id="gifs" class="col-lg-6"></div>
-        <div id="seachAndAdd" class="col-lg-6">
-        <form>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Add A Button</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Example">
+        <div class="card card-default col-lg-6">
+            <div id="gifs" class="row"></div>
+        </div>
+        <div class="card card-default col-lg-6">
+            <div class="card-header">
+                Add A Catagory
             </div>
-        </form> 
+            <div class="card-body">
+                <form>
+                <div class="form-group row">
+                    <input class="form-control" id="new-catagory" type="text">
+                </div>
+                <button class="btn btn-primary" id="submit-catagory" type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 
 
-<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script rel="text/javascript" src="assets/javascript/app.js"></script>
 </body>
