@@ -29,15 +29,15 @@
             <button class="dropdown-item gifButton">Ocelots</button>
             <button class="dropdown-item gifButton">Wolves</button>
             <button class="dropdown-item gifButton">Fox</button>
-            <button class="dropdown-item gifButton">Doplhins</button>
+            <button class="dropdown-item gifButton">Dolphins</button>
         </div>
     </div>
     <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Reactions
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <button class="dropdown-item gifButton">Wow</button>
+            <button class="dropdown-item gifButton">Wow </button>
             <button class="dropdown-item gifButton">Love</button>
             <button class="dropdown-item gifButton">Gross</button>
             <button class="dropdown-item gifButton">Facepalm</button>
@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Sports
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -64,12 +64,12 @@
         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Favorites
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="dropdown-menu" id="favorites" aria-labelledby="dropdownMenuButton">
         
         </div>
     </div>
     <div class="dropdown">
-            <button class="btn btn-info dropdown-toggle newButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-warning dropdown-toggle newButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 New
             </button>
             <div class="dropdown-menu" id="newTopics" aria-labelledby="dropdownMenuButton">
@@ -82,19 +82,21 @@
 
 <div class="container mt-5  ">
     <div class="row">
-        <div class="card card-default col-lg-6">
+        <div class="card card-default col-lg-5">
             <div id="gifs" class="row"></div>
         </div>
-        <div class="card card-default col-lg-6">
-            <div class="card-header">
-                Add A Catagory
-            </div>
+        <div class="col-lg-2"></div>
+        <div class="card card-default col-lg-5">
+            <h3 class="card-header">
+                Add A Button
+            </h3>
             <div class="card-body">
                 <form>
                 <div class="form-group row">
                     <input class="form-control" id="new-catagory" type="text">
                 </div>
-                <button class="btn btn-primary" id="submit-catagory" type="submit">Submit</button>
+                
+                <button class="btn btn-dark" id="submit-catagory" type="submit">Submit</button>
                 </form>
             </div>
         </div>
