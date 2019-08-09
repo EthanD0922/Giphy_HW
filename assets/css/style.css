@@ -1,0 +1,12 @@
+body {
+    background-image: url(../images/background.png);
+}
+
+.jumbotron, .card-header {
+    background-color: aquamarine;
+}
+
+#submit-catagory {
+    background-color: peru;
+    max-height: 20%;
+}

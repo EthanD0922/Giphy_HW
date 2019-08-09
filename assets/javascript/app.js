@@ -7,6 +7,9 @@ var userSearch = "";
 //will be used to shorten the response.data when its needed.
 var results = ""
 
+var selectRating = ""
+
+// var newDiv = ""
 
 var selectGif = ""
 
@@ -26,19 +29,7 @@ $.ajax({
 
     //this for loop adds 10 gifs to the screen at a paused state.
     for (var i = 0; i < 10; i++){
-        var newDiv = $("<div>")
-
-        //The img loads as still
-        selectGif = $("<img src='" + results[i].images.fixed_width_still.url + "'>")
-        //The following 4 lines set data so that the gif is able to be switched between still
-        //and animated
-        selectGif.attr("data-still", results[i].images.fixed_width_still.url)
-        selectGif.attr("data-animate", results[i].images.fixed_width.url) 
-        selectGif.attr("data-state", "still")
-        selectGif.attr("class", "gif col justify-content-center")
-        
-        //used to pull the rating from the select gif
-        var selectRating = $("<p class='text-center'>Rating: " + results[i].rating + "</p>")
+        renderGifs(results[i])
 
         //add the red <3 button so that the user can save specific gifs under the favorite tab
         var favoriteBtn = $("<button class='btn btn-danger m-2 favoriteBtn' value='" + results[i].id + "' data-title='" + results[i].title + "'type='submit'><3</button>")
@@ -46,9 +37,6 @@ $.ajax({
         //following sends the above information to the #gifs div
         selectRating.append(favoriteBtn)
 
-        newDiv.prepend(selectGif).prepend(selectRating)
-
-        $("#gifs").prepend(newDiv)
     }
 console.log(userSearch)
 console.log(response)
@@ -88,6 +76,8 @@ $(document).on("click", "#submit-catagory", function(event){
     newButton.text(newTopicText)
 
     $("#newTopics").prepend(newButton)
+
+    $("#new-catagory").val(" ")
 })
 
 
@@ -96,7 +86,7 @@ $(document).on("click", "#submit-catagory", function(event){
 $(document).on("click", ".favoriteBtn", function(event){
     event.preventDefault();
 
-    var favBtn = $("<button>")
+    var favBtn = $("<button>");
 
     favBtn.attr("class" , "dropdown-item newFavorite")
     favBtn.attr("value", $(this).val())
@@ -122,24 +112,29 @@ $(document).on("click", ".newFavorite", function(){
         method: "GET",
     }).then(function(response){
         results= response.data
-
-        //because this function doesn't use the for loop I rewrote the gifs being added without
-        //[i]. I need to test other ways to pull the information to see if there is a potential
-        // work around. there is also no Favorite button in this query becuase they are already
-        //favorites. Will also look at adding a remove favorite button. 
-        selectGif = $("<img src='" + results.images.fixed_width_still.url + "'>")
-        
-        selectGif.attr("data-still", results.images.fixed_width_still.url)
-        selectGif.attr("data-animate", results.images.fixed_width.url) 
-        selectGif.attr("data-state", "still")
-        selectGif.attr("class", "gif col justify-content-center")
-        
-        var newDiv = $("<div>")
-        
-        var selectRating = $("<p class='text-center'>Rating: " + results.rating + "</p>")
-
-        newDiv.prepend(selectGif).prepend(selectRating)
-
-        $("#gifs").prepend(newDiv)
+        renderGifs(results);
     })
-})
+});
+
+function renderGifs(data) {
+    var newDiv = $("<div>")
+
+    newDiv.attr("class", "border rounded ml-1 mt-2")
+
+    //The img loads as still
+    var selectGif = $("<img src='" + data.images.fixed_width_still.url + "'>")
+    //The following 4 lines set data so that the gif is able to be switched between still
+    //and animated
+    selectGif.attr("data-still", data.images.fixed_width_still.url)
+    selectGif.attr("data-animate", data.images.fixed_width.url) 
+    selectGif.attr("data-state", "still")
+    selectGif.attr("class", "gif col justify-content-center")
+    
+    //used to pull the rating from the select gif
+    selectRating = $("<p class='text-center'>Rating: " + data.rating + "</p>")
+
+    newDiv.prepend(selectGif).prepend(selectRating)
+
+    $("#gifs").prepend(newDiv)
+
+}
